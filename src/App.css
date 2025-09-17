@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+/* ==================== Global Styles ==================== */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #001f3f;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none;
+    color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ==================== Home Page ==================== */
+.home-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
-.App-link {
-  color: #61dafb;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 77, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+/* ==================== Buttons ==================== */
+.btn-group, nav {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #0077b6;
+    color: white;
+    border-radius: 25px;
+    margin: 5px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0096c7;
+}
+
+/* ==================== Forms (Login, Signup, Report) ==================== */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: rgba(0, 102, 153, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* ==================== Dashboard ==================== */
+.dashboard-container {
+    text-align: center;
+    padding: 50px;
+}
+
+/* ==================== Alert Banner ==================== */
+.alert-banner {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* ==================== Decision Banner ==================== */
+.decision-banner {
+    background-color: #0077b6;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* ==================== Map View ==================== */
+.map-container {
+    padding: 20px;
+    text-align: center;
+}
+
+#map {
+    height: 80vh;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ==================== Report Details ==================== */
+.report-details img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* ==================== Media Upload ==================== */
+.form-container input[type="file"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* ==================== Responsive Styles ==================== */
+@media screen and (max-width: 768px) {
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
 }
