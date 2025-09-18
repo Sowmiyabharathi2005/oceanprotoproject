@@ -13,7 +13,7 @@ function Predictions() {
 
     return (
         <div className="predictions-container">
-            <h1>OceanPro Predictions</h1>
+            <h1>AquaNova Predictions</h1>
 
             <div className="prediction-card">
                 <h2>Weather Prediction</h2>
