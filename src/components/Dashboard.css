@@ -1,0 +1,252 @@
+/* =======================
+   Full Dashboard Container
+   ======================= */
+   .dashboard-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #001f3f 0%, #003366 70%, #006699 100%);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated wave overlay (background) */
+.dashboard-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('https://i.ibb.co/2c5YXs0/waves.png') repeat-x;
+    background-size: cover;
+    opacity: 0.1;
+    animation: waveMove 30s linear infinite;
+    pointer-events: none;
+    z-index: 0; /* lowest layer */
+}
+
+@keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* =======================
+   Texts
+   ======================= */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =======================
+   Dashboard Cards (Top Grid)
+   ======================= */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 2; /* above fishes */
+}
+
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    background: rgba(0, 51, 77, 0.7);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s, background 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 30px rgba(0, 191, 255, 0.6);
+    border: 2px solid #00bfff;
+    background: rgba(0, 102, 153, 0.85);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.dashboard-card:hover .card-icon {
+    transform: scale(1.2);
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-badge {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Logout card */
+.logout-card {
+    background-color: #666666 !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* =======================
+   Bottom Row (Prediction + Logout)
+   ======================= */
+.bottom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2; /* above fishes */
+}
+
+.bottom-row .dashboard-card {
+    min-width: 180px;
+}
+
+/* =======================
+   Predictions Section (future use)
+   ======================= */
+.predictions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.prediction-card {
+    background: rgba(0, 51, 77, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.prediction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,191,255,0.6);
+}
+
+.prediction-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.prediction-card p {
+    font-size: 1.2rem;
+}
+
+/* =======================
+   Animated Fishes (middle layer)
+   ======================= */
+.fish {
+    position: absolute;
+    width: 60px;
+    z-index: 1; /* behind cards, above background */
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.fish1 { top: 20%; left: -100px; animation: swim 25s linear infinite; }
+.fish2 { top: 50%; left: -120px; animation: swim 30s linear infinite; }
+.fish3 { top: 70%; left: -140px; animation: swim 28s linear infinite; }
+.fish4 { top: 30%; left: -160px; animation: swim 35s linear infinite; }
+.fish5 { top: 60%; left: -180px; animation: swim 32s linear infinite; }
+.fish6 { top: 80%; left: -200px; animation: swim 40s linear infinite; }
+
+@keyframes swim {
+    0%   { left: -150px; transform: rotateY(0deg); }
+    50%  { left: 100%; transform: rotateY(180deg); }
+    100% { left: -150px; transform: rotateY(360deg); }
+}
+
+/* =======================
+   Floating Bubbles
+   ======================= */
+.bubble {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: bubbleMove 20s linear infinite;
+    z-index: 1; /* same as fishes */
+}
+
+.bubble1 { top: 80%; left: 20%; animation-delay: 0s; }
+.bubble2 { top: 90%; left: 40%; animation-delay: 3s; }
+.bubble3 { top: 85%; left: 60%; animation-delay: 6s; }
+.bubble4 { top: 75%; left: 80%; animation-delay: 9s; }
+.bubble5 { top: 70%; left: 10%; animation-delay: 12s; }
+
+@keyframes bubbleMove {
+    0%   { transform: translateY(0) scale(0.5); opacity: 0.3; }
+    50%  { transform: translateY(-200px) scale(1); opacity: 0.6; }
+    100% { transform: translateY(-400px) scale(0); }
+}
+
+/* =======================
+   Responsive
+   ======================= */
+@media (max-width: 768px) {
+    .dashboard-card, .prediction-card {
+        width: 90%;
+    }
+
+    .fish {
+        width: 50px;
+    }
+
+    .bottom-row {
+        flex-direction: column;
+    }
+}
