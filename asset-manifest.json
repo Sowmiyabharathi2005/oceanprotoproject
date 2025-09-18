@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/oceanprotoproject/static/css/main.d46493e1.css",
+    "main.js": "/oceanprotoproject/static/js/main.e264dbe9.js",
+    "static/js/453.8d94053d.chunk.js": "/oceanprotoproject/static/js/453.8d94053d.chunk.js",
+    "index.html": "/oceanprotoproject/index.html",
+    "main.d46493e1.css.map": "/oceanprotoproject/static/css/main.d46493e1.css.map",
+    "main.e264dbe9.js.map": "/oceanprotoproject/static/js/main.e264dbe9.js.map",
+    "453.8d94053d.chunk.js.map": "/oceanprotoproject/static/js/453.8d94053d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d46493e1.css",
+    "static/js/main.e264dbe9.js"
+  ]
+}
